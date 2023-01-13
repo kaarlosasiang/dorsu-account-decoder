@@ -50,12 +50,7 @@ class User {
       .replace(/\s/g, "")
       .toUpperCase()[0];
 
-    console.log(fullName);
-    console.log(firstLetterOfFirstName);
-    console.log(firstLetterOfLastName);
-
     const nameCount = fullName.length;
-    console.log(nameCount);
 
     return `${
       this.schoolId +
@@ -115,7 +110,6 @@ class User {
 }
 
 inputField.forEach(element => {
-  console.log(element);
   element.addEventListener("focusout", function(){
     if (element.value == '') {
       document.getElementById(element.id).classList.add("border-red-500");
@@ -137,9 +131,6 @@ submitBtn.addEventListener("click", function (e) {
     form["schoolYear"].value,
     form["birthMonth"].value
   );
-
-  console.log(newUser.getUsername());
-  console.log(newUser.getPassword());
 
   if (newUser.getUsername() && newUser.getPassword()) {
     Swal.fire({

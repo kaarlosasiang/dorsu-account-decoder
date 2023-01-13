@@ -22,7 +22,9 @@
         alt="Davao Oriental State University Logo"
         class="max-w-[150px]"
       />
-      <h1 class="font-bold text-2xl text-[#404040]">Grade Inquiry Account Decoder</h1>
+      <h1 class="font-bold text-2xl text-[#404040]">
+        Grade Inquiry Account Decoder
+      </h1>
       <div class="p-5">
         <form
           action="#"
@@ -38,10 +40,10 @@
                     class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline user-input"
                     id="firstname"
                     type="text"
-                    placeholder="First Name"
+                    placeholder="First Name*"
                   />
                   <span
-                    class="firstname-error-message text-red-500  text-[10px]"
+                    class="firstname-error-message text-red-500 text-[10px]"
                   ></span>
                 </div>
                 <div class="col-span-12 sm:col-span-5">
@@ -49,7 +51,7 @@
                     class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline user-input"
                     id="lastname"
                     type="text"
-                    placeholder="Last Name"
+                    placeholder="Last Name*"
                   />
                   <span
                     class="lastname-error-message text-red-500 text-[10px]"
@@ -70,7 +72,7 @@
                     class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline user-input"
                     id="schoolYear"
                     type="text"
-                    placeholder="School Year"
+                    placeholder="School Year*"
                   />
                   <span
                     class="schoolYear-error-message text-red-500 text-[10px]"
@@ -81,8 +83,9 @@
                     class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline user-input"
                     id="schoolId"
                     type="text"
-                    placeholder="School Id"
+                    placeholder="School Id Number*"
                   />
+
                   <span
                     class="schoolId-error-message text-red-500 text-[10px]"
                   ></span>
@@ -95,7 +98,9 @@
                     aria-label="Default select example"
                     id="birthMonth"
                   >
-                    <option selected>Select Birth Month</option>
+                    <option value="default" selected>
+                      Select Birth Month*
+                    </option>
                     <option value="1">January</option>
                     <option value="2">February</option>
                     <option value="3">March</option>
@@ -120,11 +125,14 @@
                   class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
                   id="form-submit"
                   type="button"
-                  disabled
                 >
                   Decode
                 </button>
-                <a href="https://dorsu.edu.ph/grade-inquiry/" class="text-blue-600 text-sm py-2">Already have your account details?</a>
+                <a
+                  href="https://dorsu.edu.ph/grade-inquiry/"
+                  class="text-blue-600 text-sm py-2"
+                  >Already have your account details?</a
+                >
               </div>
             </form>
             <div class="mt-5 flex flex-col items-center mb-1">
@@ -138,9 +146,10 @@
                 Developed and Maintained by
               </p>
               <a href="https://github.com/kaarlosasiang" target="_blank">
-                <span class="flex justify-center text-[20px] font-medium hover:text-blue-600"
-                >Kaarlo Sasiang</span
-              >
+                <span
+                  class="flex justify-center text-[20px] font-medium hover:text-blue-600"
+                  >Kaarlo Sasiang</span
+                >
               </a>
             </div>
           </div>

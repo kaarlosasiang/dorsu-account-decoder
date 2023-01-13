@@ -109,36 +109,51 @@ class User {
   }
 }
 
-inputField.forEach(element => {
-  element.addEventListener("focusout", function(){
-    if (element.value == '') {
+inputField.forEach((element) => {
+  element.addEventListener("focusout", function () {
+    if (element.value == "") {
       document.getElementById(element.id).classList.add("border-red-500");
-      document.querySelector(`.${element.id}-error-message`).innerHTML = `${element.placeholder} cannot be empty!`;
-    }else{
+      document.querySelector(
+        `.${element.id}-error-message`
+      ).innerHTML = `${element.placeholder} cannot be empty!`;
+    } else {
       document.getElementById(element.id).classList.remove("border-red-500");
-      document.querySelector(`.${element.id}-error-message`).innerHTML = ``;
+      document.querySelector(`.${element.id}-error-message`).innerHTML = "";
       submitBtn.disabled = false;
     }
-  })
-})
+  });
+});
 
 submitBtn.addEventListener("click", function (e) {
-  const newUser = new User(
-    form["firstname"].value,
-    form["lastname"].value,
-    form["nameExtension"].value,
-    form["schoolId"].value,
-    form["schoolYear"].value,
-    form["birthMonth"].value
-  );
-
-  if (newUser.getUsername() && newUser.getPassword()) {
+  if (
+    form["firstname"].value != "" &&
+    form["lastname"].value != "" &&
+    form["schoolId"].value != "" &&
+    form["schoolYear"].value != "" &&
+    form["birthMonth"].value != "default"
+  ) {
+    const newUser = new User(
+      form["firstname"].value,
+      form["lastname"].value,
+      form["nameExtension"].value,
+      form["schoolId"].value,
+      form["schoolYear"].value,
+      form["birthMonth"].value
+    );
+    if (newUser.getUsername() && newUser.getPassword()) {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        html: `<p>Username: ${newUser.getUsername()}</p>
+        <p>Password: ${newUser.getPassword()}</p>`,
+        showConfirmButton: true,
+      });
+    }
+  }else{
     Swal.fire({
-      position: "center",
-      icon: "success",
-      html:`<p>Username: ${newUser.getUsername()}</p>
-      <p>Password: ${newUser.getPassword()}</p>`,
-      showConfirmButton: true,
-    });
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Please fill up all the fields!',
+    })
   }
 });

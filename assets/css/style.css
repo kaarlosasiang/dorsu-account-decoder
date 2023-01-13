@@ -547,6 +547,50 @@ video {
   }
 }
 
+.absolute {
+  position: absolute;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.right-10 {
+  right: 2.5rem;
+}
+
+.right-80 {
+  right: 20rem;
+}
+
+.right-96 {
+  right: 24rem;
+}
+
+.right-\[85\] {
+  right: 85;
+}
+
+.right-\[90\] {
+  right: 90;
+}
+
+.right-1\.5 {
+  right: 0.375rem;
+}
+
+.right-1 {
+  right: 0.25rem;
+}
+
+.right-auto {
+  right: auto;
+}
+
 .col-span-12 {
   grid-column: span 12 / span 12;
 }

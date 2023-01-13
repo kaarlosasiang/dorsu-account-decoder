@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DORSU Account Decoder</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="container h-[100vh] flex flex-col items-center justify-center overflow-scroll">
+      <img
+        src="https://dorsu.edu.ph/wp-content/uploads/2021/10/dorsu.ico"
+        alt="Davao Oriental State University Logo"
+        class="max-w-[150px]"
+      />
+      <h1 class="font-bold text-2xl text-[#404040]">DORSU Account Decoder</h1>
+      <div class="p-5">
+        <form
+          action="#"
+          id="form"
+          method="post"
+          class="w-[400px] flex items-center justify-center"
+        >
+          <div class="w-full">
+            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+              <div class="mb-1 sm:mb-4 grid grid-cols-12 gap-1">
+                <div class="col-span-12 sm:col-span-5">
+                  <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline user-input"
+                    id="firstname"
+                    type="text"
+                    placeholder="First Name"
+                  />
+                  <span class="firstname-error-message text-red-500 text-[10px]"></span>
+                </div>
+                <div class="col-span-12 sm:col-span-5">
+                  <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline user-input"
+                    id="lastname"
+                    type="text"
+                    placeholder="Last Name"
+                  />
+                  <span class="lastname-error-message text-red-500 text-[10px]"></span>
+                </div>
+                <div class="col-span-12 sm:col-span-2">
+                  <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="nameExtension"
+                    type="text"
+                    placeholder="Jr,Sr,III"
+                  />
+                </div>
+              </div>
+              <div class="mb-0 sm:mb-4 grid grid-cols-12 gap-1">
+                <div class="col-span-12 sm:col-span-6">
+                  <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline user-input"
+                    id="schoolYear"
+                    type="text"
+                    placeholder="School Year"
+                  />
+                  <span class="schoolYear-error-message text-red-500 text-[10px]"></span>
+                </div>
+                <div class="col-span-12 sm:col-span-6">
+                  <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline user-input"
+                    id="schoolId"
+                    type="text"
+                    placeholder="School Id"
+                  />
+                  <span class="schoolId-error-message text-red-500 text-[10px]"></span>
+                </div>
+              </div>
+              <div class="mb-4 grid grid-cols-12 gap-1">
+                <div class="col-span-12">
+                  <select
+                    class="form-select shadow w-full py-2 px-3 text-base font-normal text-gray-400 bg-white bg-clip-padding bg-no-repeat border rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:outline-none user-input"
+                    aria-label="Default select example"
+                    id="birthMonth"
+                  >
+                    <option selected>Select Birth Month</option>
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                  <span class="schoolId-error-message text-red-500 text-[10px]"></span>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <button
+                  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+                  id="form-submit"
+                  type="button" disabled
+                >
+                  Decode
+                </button>
+              </div>
+            </form>
+            <div class="mt-10">
+              <p class="text-center text-gray-500 text-xs">
+                Developed and Maintained by
+              </p>
+              <span class="flex justify-center text-[20px] font-medium"
+                >Kaarlo Sasiang</span
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

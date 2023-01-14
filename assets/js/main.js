@@ -13,8 +13,9 @@ let isValid = false;
 
 if (!getCookie("isIntro")) {
   introJs().start();
+  setCookie("isIntro", true, .01);
 }
-setCookie("isIntro", true, 1);
+
 
 // window.addEventListener('DOMContentLoaded', function(){
 //   Swal.fire({
@@ -175,13 +176,17 @@ submitBtn.addEventListener("click", function (e) {
         form["birthMonth"].value
       );
 
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        html: `<p>Username: ${newUser.getUsername()}</p>
-        <p>Password: ${newUser.getPassword()}</p>`,
-        showConfirmButton: true,
-      });
+      document.getElementById("decoded-details").classList.remove("hidden");
+      document.getElementById("username-alert").innerHTML = newUser.getUsername();
+      document.getElementById("password-alert").innerHTML = newUser.getPassword();
+
+      // Swal.fire({
+      //   position: "center",
+      //   icon: "success",
+      //   html: `<p>Username: ${newUser.getUsername()}</p>
+      //   <p>Password: ${newUser.getPassword()}</p>`,
+      //   showConfirmButton: true,
+      // });
     } else {
       Swal.fire({
         icon: "error",
@@ -202,12 +207,12 @@ document.getElementById("see-process").addEventListener("click", function () {
   Swal.fire({
     title: "<strong>Decoding Process</strong>",
     icon: "info",
-    html:
-      `<img src="assets/img/username-process.png"><img src="assets/img/password-process.png">`,
+    html: `<img src="assets/img/username-process.png">
+    <img src="assets/img/password-process.png">`,
     showCloseButton: true,
     focusConfirm: false,
-    confirmButtonText: 'Close',
-    confirmButtonAriaLabel: "Thumbs up, great!"
+    confirmButtonText: "Close",
+    confirmButtonAriaLabel: "Thumbs up, great!",
   });
 });
 

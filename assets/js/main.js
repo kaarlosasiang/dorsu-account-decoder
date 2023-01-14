@@ -11,7 +11,10 @@ const inputField = document.querySelectorAll(".user-input");
 const submitBtn = document.getElementById("form-submit");
 let isValid = false;
 
-introJs().start();
+if (!getCookie("isIntro")) {
+  introJs().start();
+}
+setCookie("isIntro", true, 1);
 
 // window.addEventListener('DOMContentLoaded', function(){
 //   Swal.fire({
@@ -32,7 +35,6 @@ introJs().start();
 //     cancelButtonAriaLabel: 'Thumbs down'
 //   })
 // })
-
 
 class User {
   constructor(
@@ -195,3 +197,39 @@ submitBtn.addEventListener("click", function (e) {
     });
   }
 });
+
+document.getElementById("see-process").addEventListener("click", function () {
+  Swal.fire({
+    title: "<strong>Decoding Process</strong>",
+    icon: "info",
+    html:
+      `<img src="assets/img/username-process.png"><img src="assets/img/password-process.png">`,
+    showCloseButton: true,
+    focusConfirm: false,
+    confirmButtonText: 'Close',
+    confirmButtonAriaLabel: "Thumbs up, great!"
+  });
+});
+
+function setCookie(name, value, days) {
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+    expires = "; expires=" + date.toUTCString();
+  }
+  document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+function getCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(";");
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == " ") c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+function eraseCookie(name) {
+  document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+}

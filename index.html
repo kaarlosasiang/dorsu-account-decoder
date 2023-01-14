@@ -16,12 +16,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/intro.min.js"></script>
   </head>
   <body class="introduction">
-    <div class="container mx-auto">
-      <div
-        data-title="Welcome"
-        data-intro="Hi there 👋! This is kaarlo, I hope this simple application can help your struggles in signing in the DOrSU Grade Inquiry Portal. Enjoy!"
-        class="flex flex-col items-center justify-center mt-10"
-      >
+    <div
+      class="container mx-auto"
+      data-title="Welcome"
+      data-intro="Hi there 👋! This is kaarlo, I hope this simple application can help your struggles in signing in the DOrSU Grade Inquiry Portal. Enjoy!"
+    >
+      <div class="flex flex-col items-center justify-center mt-10">
         <div class="flex items-center justify-center gap-5">
           <img
             src="assets/img/dorsu-logo.ico"
@@ -74,7 +74,9 @@
           <br />
           <strong class="font-bold">Password:</strong>
           <span class="block sm:inline" id="password-alert"></span>
-          <br><strong class="font-bold">NOTE: Rest assured, your details will not be saved, Thanks!</strong>
+          <br /><strong class="font-bold"
+            >NOTE: Rest assured, your details will not be saved, Thanks!</strong
+          >
         </div>
         <form
           action="#"
@@ -160,9 +162,7 @@
                     aria-label="Default select example"
                     id="birthMonth"
                   >
-                    <option value="default" selected>
-                      Select Birth Month
-                    </option>
+                    <option value="default" selected>Select Birth Month</option>
                     <option value="1">January</option>
                     <option value="2">February</option>
                     <option value="3">March</option>

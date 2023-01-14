@@ -11,13 +11,12 @@ const inputField = document.querySelectorAll(".user-input");
 const submitBtn = document.getElementById("form-submit");
 let isValid = false;
 
-window.addEventListener('DOMContentLoaded', function(){
+window.addEventListener("DOMContentLoaded", function () {
   if (sessionStorage.getItem("isIntrojs") != "true") {
     introJs().start();
     sessionStorage.setItem("isIntrojs", "true");
   }
-})
-
+});
 
 // window.addEventListener('DOMContentLoaded', function(){
 //   Swal.fire({
@@ -145,15 +144,17 @@ inputField.forEach((element) => {
 
     const pattern = /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi;
     if (pattern.test(document.getElementById("schoolYear").value)) {
-      document.getElementById(element.id).classList.add("border-red-500");
+      document.getElementById("schoolYear").classList.add("border-red-500");
       document.querySelector(
-        `.${element.id}-error-message`
+        `.schoolYear-error-message`
       ).innerHTML = `${element.placeholder} cannot contain special characters!`;
+      isValid = false;
     } else if (pattern.test(document.getElementById("schoolId").value)) {
       document.getElementById(element.id).classList.add("border-red-500");
       document.querySelector(
         `.${element.id}-error-message`
       ).innerHTML = `${element.placeholder} cannot contain special characters!`;
+      isValid = false;
     } else {
       isValid = true;
     }
@@ -169,6 +170,7 @@ submitBtn.addEventListener("click", function (e) {
     form["birthMonth"].value != "default"
   ) {
     if (isValid) {
+      console.log(isValid);
       const newUser = new User(
         form["firstname"].value,
         form["lastname"].value,
@@ -179,8 +181,10 @@ submitBtn.addEventListener("click", function (e) {
       );
 
       document.getElementById("decoded-details").classList.remove("hidden");
-      document.getElementById("username-alert").innerHTML = newUser.getUsername();
-      document.getElementById("password-alert").innerHTML = newUser.getPassword();
+      document.getElementById("username-alert").innerHTML =
+        newUser.getUsername();
+      document.getElementById("password-alert").innerHTML =
+        newUser.getPassword();
 
       // Swal.fire({
       //   position: "center",

@@ -633,6 +633,18 @@ video {
   height: 1.5rem;
 }
 
+.max-h-\[150px\] {
+  max-height: 150px;
+}
+
+.max-h-\[100px\] {
+  max-height: 100px;
+}
+
+.max-h-\[130px\] {
+  max-height: 130px;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -647,6 +659,14 @@ video {
 
 .max-w-\[150px\] {
   max-width: 150px;
+}
+
+.max-w-\[100px\] {
+  max-width: 100px;
+}
+
+.max-w-\[130px\] {
+  max-width: 130px;
 }
 
 .cursor-pointer {
@@ -681,6 +701,10 @@ video {
 
 .gap-1 {
   gap: 0.25rem;
+}
+
+.gap-5 {
+  gap: 1.25rem;
 }
 
 .overflow-scroll {

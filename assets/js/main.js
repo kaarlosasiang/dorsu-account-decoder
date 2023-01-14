@@ -11,12 +11,14 @@ const inputField = document.querySelectorAll(".user-input");
 const submitBtn = document.getElementById("form-submit");
 let isValid = false;
 
-window.addEventListener("DOMContentLoaded", function () {
-  if (sessionStorage.getItem("isIntrojs") != "true") {
-    introJs().start();
-    sessionStorage.setItem("isIntrojs", "true");
-  }
-});
+introJs().start();
+
+// window.addEventListener("DOMContentLoaded", function () {
+//   if (sessionStorage.getItem("isIntrojs") != "true") {
+//     introJs().start();
+//     sessionStorage.setItem("isIntrojs", "true");
+//   }
+// });
 
 // window.addEventListener('DOMContentLoaded', function(){
 //   Swal.fire({

@@ -11,7 +11,7 @@ const inputField = document.querySelectorAll(".user-input");
 const submitBtn = document.getElementById("form-submit");
 let isValid = false;
 
-introJs(".introduction").start();
+introJs().start();
 
 // window.addEventListener('DOMContentLoaded', function(){
 //   Swal.fire({

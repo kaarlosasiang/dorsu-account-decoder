@@ -11,10 +11,10 @@ const inputField = document.querySelectorAll(".user-input");
 const submitBtn = document.getElementById("form-submit");
 let isValid = false;
 
-// if (!getCookie("isIntro")) {
+if (sessionStorage.getItem("isIntrojs") != "true") {
   introJs().start();
-  // setCookie("isIntro", true, .01);
-// }
+  sessionStorage.setItem("isIntrojs", "true");
+}
 
 
 // window.addEventListener('DOMContentLoaded', function(){

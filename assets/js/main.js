@@ -124,7 +124,10 @@ inputField.forEach((element) => {
 
     const pattern = /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi;
     if(pattern.test(document.getElementById("schoolYear").value) ){
-      console.log(element.id);
+      document.getElementById(element.id).classList.add("border-red-500");
+      document.querySelector(
+        `.${element.id}-error-message`
+      ).innerHTML = `${element.placeholder} cannot contain special characters!`;
     }else if(pattern.test(document.getElementById("schoolId").value)){
       document.getElementById(element.id).classList.add("border-red-500");
       document.querySelector(

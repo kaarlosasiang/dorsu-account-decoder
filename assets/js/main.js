@@ -9,14 +9,30 @@ const schoolYear = document.getElementById("schoolYear");
 const birthMonth = document.getElementById("birthMonth").value;
 const inputField = document.querySelectorAll(".user-input");
 const submitBtn = document.getElementById("form-submit");
-// const userDetails = {
-//     firstName : '',
-//     lastName : '',
-//     nameExtension : '',
-//     schoolId : '',
-//     birthYear: '',
-//     birthMonth: ''
-// }
+let isValid = false;
+
+introJs(".introduction").start();
+
+// window.addEventListener('DOMContentLoaded', function(){
+//   Swal.fire({
+//     title: '<strong>HTML <u>example</u></strong>',
+//     icon: 'info',
+//     html:
+//       'You can use <b>bold text</b>, ' +
+//       '<a href="//sweetalert2.github.io">links</a> ' +
+//       'and other HTML tags',
+//     showCloseButton: true,
+//     showCancelButton: true,
+//     focusConfirm: false,
+//     confirmButtonText:
+//       '<i class="fa fa-thumbs-up"></i> Great!',
+//     confirmButtonAriaLabel: 'Thumbs up, great!',
+//     cancelButtonText:
+//       '<i class="fa fa-thumbs-down"></i>',
+//     cancelButtonAriaLabel: 'Thumbs down'
+//   })
+// })
+
 
 class User {
   constructor(
@@ -123,18 +139,19 @@ inputField.forEach((element) => {
     }
 
     const pattern = /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi;
-    if(pattern.test(document.getElementById("schoolYear").value) ){
+    if (pattern.test(document.getElementById("schoolYear").value)) {
       document.getElementById(element.id).classList.add("border-red-500");
       document.querySelector(
         `.${element.id}-error-message`
       ).innerHTML = `${element.placeholder} cannot contain special characters!`;
-    }else if(pattern.test(document.getElementById("schoolId").value)){
+    } else if (pattern.test(document.getElementById("schoolId").value)) {
       document.getElementById(element.id).classList.add("border-red-500");
       document.querySelector(
         `.${element.id}-error-message`
       ).innerHTML = `${element.placeholder} cannot contain special characters!`;
+    } else {
+      isValid = true;
     }
-
   });
 });
 
@@ -146,15 +163,16 @@ submitBtn.addEventListener("click", function (e) {
     form["schoolYear"].value != "" &&
     form["birthMonth"].value != "default"
   ) {
-    const newUser = new User(
-      form["firstname"].value,
-      form["lastname"].value,
-      form["nameExtension"].value,
-      form["schoolId"].value,
-      form["schoolYear"].value,
-      form["birthMonth"].value
-    );
-    if (newUser.getUsername() && newUser.getPassword()) {
+    if (isValid) {
+      const newUser = new User(
+        form["firstname"].value,
+        form["lastname"].value,
+        form["nameExtension"].value,
+        form["schoolId"].value,
+        form["schoolYear"].value,
+        form["birthMonth"].value
+      );
+
       Swal.fire({
         position: "center",
         icon: "success",
@@ -162,12 +180,18 @@ submitBtn.addEventListener("click", function (e) {
         <p>Password: ${newUser.getPassword()}</p>`,
         showConfirmButton: true,
       });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "School Year and ID number cannot contain special characters!",
+      });
     }
-  }else{
+  } else {
     Swal.fire({
-      icon: 'error',
-      title: 'Oops...',
-      text: 'Please fill up all the fields!',
-    })
+      icon: "error",
+      title: "Oops...",
+      text: "Please fill up all the fields!",
+    });
   }
 });

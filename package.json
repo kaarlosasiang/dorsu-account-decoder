@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "intro.js": "^6.0.0"
   }
 }

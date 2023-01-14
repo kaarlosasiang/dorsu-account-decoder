@@ -207,9 +207,9 @@ submitBtn.addEventListener("click", function (e) {
 
 document.getElementById("see-process").addEventListener("click", function () {
   Swal.fire({
-    title: "<strong>Decoding Process</strong>",
+    title: "<strong>Decoding Process</strong> ",
     icon: "info",
-    html: `<img src="assets/img/username-process.png">
+    html: `<h1>NOTE: Your details will not be saved in our system! Thanks!</h1> <img src="assets/img/username-process.png">
     <img src="assets/img/password-process.png">`,
     showCloseButton: true,
     focusConfirm: false,

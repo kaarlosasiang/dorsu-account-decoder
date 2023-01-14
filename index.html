@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Account Decoder</title>
+    <title>DOrSU Account Decoder</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link
       rel="shortcut icon"
@@ -16,10 +16,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/intro.min.js"></script>
   </head>
   <body class="introduction">
-    <div class="container mx-auto h-[100vh] overflow-scroll">
+    <div class="container mx-auto">
       <div
         data-title="Welcome"
-        data-intro="Hi there 👋! This is kaarlo, I hope this simple application can help you with your struggles trying to sign in on the Grade Inquiry Portal. Enjoy!"
+        data-intro="Hi there 👋! This is kaarlo, I hope this simple application can help your struggles in signing in the DOrSU Grade Inquiry Portal. Enjoy!"
         class="flex flex-col items-center justify-center mt-10"
       >
         <div class="flex items-center justify-center gap-5">
@@ -38,7 +38,7 @@
           <h1
             class="font-bold text-xl sm:text-2xl gap-3 items-center text-[#404040]"
           >
-            Grade Inquiry Account Decoder
+            DOrSU Grade Inquiry Account Decoder
           </h1>
 
           <div>
@@ -61,7 +61,7 @@
             </svg>
           </div>
         </div>
-        <span>Powered by CodeByters</span>
+        <span class="text-xl">Powered by CodeByters</span>
       </div>
       <div class="m-5 flex flex-col justify-center items-center">
         <div
@@ -74,6 +74,7 @@
           <br />
           <strong class="font-bold">Password:</strong>
           <span class="block sm:inline" id="password-alert"></span>
+          <br><strong class="font-bold">NOTE: Rest assured, your details will not be saved, Thanks!</strong>
         </div>
         <form
           action="#"
@@ -91,7 +92,7 @@
                     class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline user-input"
                     id="firstname"
                     type="text"
-                    placeholder="First Name*"
+                    placeholder="First Name"
                   />
                   <span
                     class="firstname-error-message text-red-500 text-[10px]"
@@ -104,7 +105,7 @@
                     class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline user-input"
                     id="lastname"
                     type="text"
-                    placeholder="Last Name*"
+                    placeholder="Last Name"
                   />
                   <span
                     class="lastname-error-message text-red-500 text-[10px]"
@@ -129,7 +130,7 @@
                     class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline user-input"
                     id="schoolYear"
                     type="text"
-                    placeholder="Year Enrolled (e.g.,2020)*"
+                    placeholder="Year Enrolled (e.g.,2020)"
                   />
                   <span
                     class="schoolYear-error-message text-red-500 text-[10px]"
@@ -142,7 +143,7 @@
                     class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline user-input"
                     id="schoolId"
                     type="text"
-                    placeholder="School Id Number*"
+                    placeholder="School ID Number"
                   />
 
                   <span
@@ -160,7 +161,7 @@
                     id="birthMonth"
                   >
                     <option value="default" selected>
-                      Select Birth Month*
+                      Select Birth Month
                     </option>
                     <option value="1">January</option>
                     <option value="2">February</option>
@@ -219,7 +220,7 @@
               </p>
               <a href="https://github.com/kaarlosasiang" target="_blank">
                 <span
-                  class="flex justify-center text-[20px] font-medium hover:text-blue-600"
+                  class="flex justify-center text-[15px] font-medium hover:text-blue-600"
                   >Kaarlo Sasiang</span
                 >
               </a>

@@ -200,7 +200,7 @@ submitBtn.addEventListener("click", function (e) {
     Swal.fire({
       icon: "error",
       title: "Oops...",
-      text: "Please fill up all the fields!",
+      text: "Please fill up all the necessary fields!",
     });
   }
 });

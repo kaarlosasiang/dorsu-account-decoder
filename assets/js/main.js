@@ -12,7 +12,16 @@ const submitBtn = document.getElementById("form-submit");
 let isValid = false;
 
 introJs().start();
-
+if (
+  localStorage.getItem("dorsu-username") &&
+  localStorage.getItem("dorsu-password")
+) {
+  document.getElementById("decoded-details").classList.remove("hidden");
+  document.getElementById("username-alert").innerHTML =
+    localStorage.getItem("dorsu-username");
+  document.getElementById("password-alert").innerHTML =
+    localStorage.getItem("dorsu-password");
+}
 // window.addEventListener("DOMContentLoaded", function () {
 //   if (sessionStorage.getItem("isIntrojs") != "true") {
 //     introJs().start();
@@ -187,7 +196,13 @@ submitBtn.addEventListener("click", function (e) {
         newUser.getUsername();
       document.getElementById("password-alert").innerHTML =
         newUser.getPassword();
-
+      if (
+        !localStorage.getItem("dorsu-username") &&
+        !localStorage.getItem("dorsu-password")
+      ) {
+        localStorage.setItem("dorsu-username", `${newUser.getUsername()}`);
+        localStorage.setItem("dorsu-password", `${newUser.getPassword()}`);
+      }
       // Swal.fire({
       //   position: "center",
       //   icon: "success",

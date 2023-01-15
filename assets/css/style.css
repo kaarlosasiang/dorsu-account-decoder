@@ -633,12 +633,12 @@ video {
   width: 100%;
 }
 
-.max-w-\[130px\] {
-  max-width: 130px;
-}
-
 .max-w-\[500px\] {
   max-width: 500px;
+}
+
+.max-w-\[130px\] {
+  max-width: 130px;
 }
 
 .cursor-pointer {
@@ -765,9 +765,9 @@ video {
   line-height: 1.75rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-\[10px\] {
@@ -777,11 +777,6 @@ video {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
 }
 
 .text-xs {

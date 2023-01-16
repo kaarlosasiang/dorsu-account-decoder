@@ -196,13 +196,12 @@ submitBtn.addEventListener("click", function (e) {
         newUser.getUsername();
       document.getElementById("password-alert").innerHTML =
         newUser.getPassword();
-      if (
-        !localStorage.getItem("dorsu-username") &&
-        !localStorage.getItem("dorsu-password")
-      ) {
-        localStorage.setItem("dorsu-username", `${newUser.getUsername()}`);
-        localStorage.setItem("dorsu-password", `${newUser.getPassword()}`);
-      }
+
+      localStorage.removeItem("dorsu-username");
+      localStorage.removeItem("dorsu-password");
+      localStorage.setItem("dorsu-username", `${newUser.getUsername()}`);
+      localStorage.setItem("dorsu-password", `${newUser.getPassword()}`);
+
       // Swal.fire({
       //   position: "center",
       //   icon: "success",

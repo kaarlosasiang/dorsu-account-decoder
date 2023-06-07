@@ -1,8 +1,8 @@
 {
     "name": "DOrSu Account Decoder",
     "short_name": "Account Decoder",
-    "id": "index.html",
-    "start_url": "index.html",
+    "id": "/dorsu-account-decoder/index.html",
+    "start_url": "/dorsu-account-decoder/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",

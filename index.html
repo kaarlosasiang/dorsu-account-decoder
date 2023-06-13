@@ -16,7 +16,8 @@
       gtag("config", "G-GPTVR3J69M");
 
       window.addEventListener("appinstalled", (event) => {
-        gtag("event", "MyCustomEvent", {
+        console.log("App Installed");
+        gtag("event", "AppInstalled", {
           event_category: "Engagement",
           event_label: "Button Click",
         });

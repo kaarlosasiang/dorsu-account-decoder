@@ -37,11 +37,6 @@
     <link rel="stylesheet" href="assets/css/introjs.css" />
     <script defer src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/6.0.0/intro.min.js"></script>
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4607767714172055"
-      crossorigin="anonymous"
-    ></script>
     <link rel="manifest" href="./manifest.json" />
     <meta name="apple-mobile-web-app-status-bar" content="#aa7700" />
     <meta name="theme-color" content="#ffffff" />
@@ -289,23 +284,7 @@
     </div>
     <script src="assets/js/main.js"></script>
     <script>
-      let deferredPrompt;
-      const installBtn = document.getElementById("installBtn");
-
-      window.addEventListener("beforeinstallprompt", (e) => {
-        deferredPrompt = e;
-        installBtn.classList.remove("hidden");
-        installBtn.classList.add("flex")
-      });
-      installBtn.addEventListener("click", async () => {
-        if (deferredPrompt !== null) {
-          deferredPrompt.prompt();
-          const { outcome } = await deferredPrompt.userChoice;
-          if (outcome === "accepted") {
-            deferredPrompt = null;
-          }
-        }
-      });
+      
     </script>
   </body>
 </html>

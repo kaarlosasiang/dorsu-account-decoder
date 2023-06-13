@@ -11,7 +11,25 @@ const inputField = document.querySelectorAll(".user-input");
 const submitBtn = document.getElementById("form-submit");
 let isValid = false;
 
-introJs().start();
+let deferredPrompt;
+const installBtn = document.getElementById("installBtn");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  deferredPrompt = e;
+  installBtn.classList.remove("hidden");
+  installBtn.classList.add("flex");
+  introJs().start();
+});
+installBtn.addEventListener("click", async () => {
+  if (deferredPrompt !== null) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === "accepted") {
+      deferredPrompt = null;
+    }
+  }
+});
+
 if (
   localStorage.getItem("dorsu-username") &&
   localStorage.getItem("dorsu-password")
@@ -260,4 +278,3 @@ function getCookie(name) {
 function eraseCookie(name) {
   document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 }
-

@@ -33,8 +33,8 @@ window.addEventListener("beforeinstallprompt", (e) => {
   deferredPrompt = e;
   installBtn.classList.remove("hidden");
   installBtn.classList.add("flex");
-  introJs().start();
 });
+introJs().start();
 installBtn.addEventListener("click", async () => {
   if (deferredPrompt !== null) {
     deferredPrompt.prompt();

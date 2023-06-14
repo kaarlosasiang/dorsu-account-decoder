@@ -216,14 +216,14 @@
               <div class="mb-0 sm:mb-4 grid grid-cols-12 gap-1">
                 <div class="col-span-12 sm:col-span-6">
                   <input
-                    data-title="School ID"
-                    data-intro="Enter Year Enrolled which is the 1st group of your ID number. Example: 2021-3548; first-group = 2021"
+                    data-title="School ID Year"
+                    data-intro="Year of Enrollment: Please enter the year you were enrolled (e.g., 2021)."
                     class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline user-input"
                     id="schoolYear"
                     type="number"
                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                     maxlength="4"
-                    placeholder="Year Enrolled (e.g.,2020)"
+                    placeholder="Year Enrolled (e.g.2021)"
                   />
                   <span
                     class="schoolYear-error-message text-red-500 text-[10px]"
@@ -231,8 +231,8 @@
                 </div>
                 <div class="col-span-12 sm:col-span-6">
                   <input
-                    data-title="School ID"
-                    data-intro="Enter School ID number which is the 2nd group of your ID number. Example: 2021-3548; second-group = 3548"
+                    data-title="School ID No."
+                    data-intro="ID Number: Please enter your ID number (e.g., 3548 from 2021-3548)."
                     class="shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline user-input"
                     id="schoolId"
                     type="number"

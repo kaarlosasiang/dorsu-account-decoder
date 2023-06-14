@@ -18,23 +18,28 @@ const installBtn = document.getElementById("installBtn");
 
 const Toast = Swal.mixin({
   toast: true,
-  position: 'top-end',
+  position: "top-end",
   showConfirmButton: false,
   timer: 2000,
   timerProgressBar: true,
   didOpen: (toast) => {
-    toast.addEventListener('mouseenter', Swal.stopTimer)
-    toast.addEventListener('mouseleave', Swal.resumeTimer)
-  }
-})
-
+    toast.addEventListener("mouseenter", Swal.stopTimer);
+    toast.addEventListener("mouseleave", Swal.resumeTimer);
+  },
+});
 
 window.addEventListener("beforeinstallprompt", (e) => {
   deferredPrompt = e;
   installBtn.classList.remove("hidden");
   installBtn.classList.add("flex");
 });
-introJs().start();
+
+const isStartIntro = getCookie("isStartIntroJS");
+if (isStartIntro == null) {
+  introJs().start();
+  setCookie("isStartIntroJS", "yes", 1);
+}
+
 installBtn.addEventListener("click", async () => {
   if (deferredPrompt !== null) {
     deferredPrompt.prompt();
@@ -286,15 +291,15 @@ function copyToClipboard(text) {
 copyUsernameBtn.addEventListener("click", function () {
   copyToClipboard(document.getElementById("username-alert").innerText);
   Toast.fire({
-    icon: 'success',
-    title: 'Username copied to clipboard'
-  })
+    icon: "success",
+    title: "Username copied to clipboard",
+  });
 });
 
 copyPasswordBtn.addEventListener("click", function () {
   copyToClipboard(document.getElementById("password-alert").innerText);
   Toast.fire({
-    icon: 'success',
-    title: 'Password copied to clipboard'
-  })
+    icon: "success",
+    title: "Password copied to clipboard",
+  });
 });

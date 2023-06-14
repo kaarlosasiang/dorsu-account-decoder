@@ -9,10 +9,25 @@ const schoolYear = document.getElementById("schoolYear");
 const birthMonth = document.getElementById("birthMonth").value;
 const inputField = document.querySelectorAll(".user-input");
 const submitBtn = document.getElementById("form-submit");
+const copyUsernameBtn = document.getElementById("copyUsername");
+const copyPasswordBtn = document.getElementById("copyPassword");
 let isValid = false;
 
 let deferredPrompt;
 const installBtn = document.getElementById("installBtn");
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 1000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+
 
 window.addEventListener("beforeinstallprompt", (e) => {
   deferredPrompt = e;
@@ -40,32 +55,6 @@ if (
   document.getElementById("password-alert").innerHTML =
     localStorage.getItem("dorsu-password");
 }
-// window.addEventListener("DOMContentLoaded", function () {
-//   if (sessionStorage.getItem("isIntrojs") != "true") {
-//     introJs().start();
-//     sessionStorage.setItem("isIntrojs", "true");
-//   }
-// });
-
-// window.addEventListener('DOMContentLoaded', function(){
-//   Swal.fire({
-//     title: '<strong>HTML <u>example</u></strong>',
-//     icon: 'info',
-//     html:
-//       'You can use <b>bold text</b>, ' +
-//       '<a href="//sweetalert2.github.io">links</a> ' +
-//       'and other HTML tags',
-//     showCloseButton: true,
-//     showCancelButton: true,
-//     focusConfirm: false,
-//     confirmButtonText:
-//       '<i class="fa fa-thumbs-up"></i> Great!',
-//     confirmButtonAriaLabel: 'Thumbs up, great!',
-//     cancelButtonText:
-//       '<i class="fa fa-thumbs-down"></i>',
-//     cancelButtonAriaLabel: 'Thumbs down'
-//   })
-// })
 
 class User {
   constructor(
@@ -219,14 +208,6 @@ submitBtn.addEventListener("click", function (e) {
       localStorage.removeItem("dorsu-password");
       localStorage.setItem("dorsu-username", `${newUser.getUsername()}`);
       localStorage.setItem("dorsu-password", `${newUser.getPassword()}`);
-
-      // Swal.fire({
-      //   position: "center",
-      //   icon: "success",
-      //   html: `<p>Username: ${newUser.getUsername()}</p>
-      //   <p>Password: ${newUser.getPassword()}</p>`,
-      //   showConfirmButton: true,
-      // });
     } else {
       Swal.fire({
         icon: "error",
@@ -265,6 +246,7 @@ function setCookie(name, value, days) {
   }
   document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
+
 function getCookie(name) {
   var nameEQ = name + "=";
   var ca = document.cookie.split(";");
@@ -275,6 +257,44 @@ function getCookie(name) {
   }
   return null;
 }
+
 function eraseCookie(name) {
   document.cookie = name + "=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;";
 }
+
+function copyToClipboard(text) {
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+
+  // Make the textarea non-editable to avoid focusing and unwanted cursor movement
+  textarea.setAttribute("readonly", "");
+
+  // Set the position to off-screen
+  textarea.style.position = "absolute";
+  textarea.style.left = "-9999px";
+
+  document.body.appendChild(textarea);
+
+  // Copy the text to the clipboard
+  textarea.select();
+  document.execCommand("copy");
+
+  // Clean up and remove the textarea
+  document.body.removeChild(textarea);
+}
+
+copyUsernameBtn.addEventListener("click", function () {
+  copyToClipboard(document.getElementById("username-alert").innerText);
+  Toast.fire({
+    icon: 'success',
+    title: 'Username copied to clipboard'
+  })
+});
+
+copyPasswordBtn.addEventListener("click", function () {
+  copyToClipboard(document.getElementById("password-alert").innerText);
+  Toast.fire({
+    icon: 'success',
+    title: 'Password copied to clipboard'
+  })
+});

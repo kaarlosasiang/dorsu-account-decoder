@@ -42,7 +42,14 @@
     <meta name="theme-color" content="#ffffff" />
   </head>
   <body class="introduction">
-    <div class="container mx-auto flex flex-col items-center justify-center">
+    <div class="h-screen flex items-center justify-center flex-col">
+      <h1 class="text-2xl">Ayaw na pamugos kay naa na siyay lain (portal)</h1>
+
+      <a href="https://portal.dorsu.edu.ph/LoginPage" class="text-[#0c6d5e]"
+        >https://portal.dorsu.edu.ph/LoginPage</a
+      >
+    </div>
+    <!-- <div class="container mx-auto flex flex-col items-center justify-center">
       <div
         data-title="Welcome"
         data-intro="Hi there 👋! This is kaarlo, I hope this simple application can help your struggles in signing in the DOrSU Grade Inquiry Portal. Enjoy!"
@@ -322,6 +329,11 @@
         </form>
       </div>
     </div>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script> -->
+    <script>
+      setTimeout(() => {
+        window.location.href = "https://portal.dorsu.edu.ph/LoginPage";
+      }, 2000);
+    </script>
   </body>
 </html>
